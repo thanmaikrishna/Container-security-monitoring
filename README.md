@@ -39,7 +39,7 @@ alert-forwarding.yaml # (optional) Falco → Prometheus / Alertmanager forwardin
 
 dashboards/
 grafana/ # Grafana dashboard JSON files
-screenshots/ # Monitoring & dashboard screenshots (to be added)
+screenshots/ # Monitoring & dashboard screenshots 
 
 ---
 
