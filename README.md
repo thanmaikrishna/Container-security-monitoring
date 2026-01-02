@@ -160,6 +160,7 @@ This project showcases a practical, real-world implementation of
 **Kubernetes container runtime security monitoring and alert visualization**, suitable for
 learning, security research, and production-aligned environments.
 
+**Author — Thanmai Krishna**
 
 
 
