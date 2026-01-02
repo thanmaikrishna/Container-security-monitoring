@@ -1,0 +1,17 @@
+- rule: Privilege Escalation Detected
+  desc: Detect containers running in privileged mode
+  condition: container and container.privileged=true
+  output: "Privileged container detected (container=%container.name user=%user.name)"
+  priority: CRITICAL
+
+- rule: Sensitive Host Volume Mount
+  desc: Detect sensitive host directories mounted inside container
+  condition: container and evt.type=mount and (fd.name startswith /etc or fd.name startswith /root)
+  output: "Sensitive volume mounted (container=%container.name path=%fd.name)"
+  priority: WARNING
+
+- rule: Unauthorized Network Access
+  desc: Detect container connecting to external networks
+  condition: container and evt.type=connect and not fd.sip in (10.0.0.0/8, 192.168.0.0/16)
+  output: "Unauthorized network access (container=%container.name dest=%fd.sip)"
+  priority: WARNING
