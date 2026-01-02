@@ -71,23 +71,63 @@ screenshots/ # Monitoring & dashboard screenshots (to be added)
   - Security incident metrics
 
 ### ✔ Documentation & Evidence
-- `screenshots/` *(to be added)*  
-  Architecture diagrams & dashboard outputs
+- `screenshots/`
+-  Screeshots/outputs
 
 ---
 
-## 🖼️ Screenshot Sections (to be added)
+## 🖼️ Screenshot Sections
 
 The following screenshots will be added to demonstrate the workflow:
 
-1. Falco deployment via Helm  
-2. Falco & Falco Exporter pods running  
-3. Runtime event detection in Falco  
-4. Custom Falco rules loaded successfully  
-5. Security alert triggered during test scenario  
-6. Prometheus scraping Falco Exporter metrics  
-7. Alertmanager receiving alert data  
-8. Grafana dashboard visualizing Falco security events
+
+- `screenshots/`  
+  Visual evidence of Falco monitoring, alerts, and dashboards
+
+---
+
+## 🖼️ Screenshot Captions
+
+### 1️⃣ Falco Deployment Using Helm  
+Falco deployed successfully in the `falco` namespace via Helm with Falco Exporter and Prometheus ServiceMonitor enabled.
+
+### 2️⃣ Falco & Falco Exporter Pods Running  
+Falco is actively monitoring runtime behavior and Falco Exporter is exposing metrics to Prometheus.
+
+### 3️⃣ Falco Runtime Monitoring & Event Streaming  
+Falco streams events via gRPC using eBPF probes, exposing alert metrics on port 9376.
+
+### 4️⃣ Custom Falco Rules Loaded  
+Falco loads rules from `falco_rules.local.yaml`, including the custom rule **Terminal shell in container**.
+
+### 5️⃣ Runtime Security Event Triggered  
+Launching an interactive shell in a test pod triggers the custom rule, proving runtime monitoring is active.
+
+### 6️⃣ Interactive Shell Detection Rule  
+Custom rule detects unauthorized shell access inside containers (bash/sh/zsh).
+
+### 7️⃣ Custom Rules Deployed via ConfigMap  
+Rules mounted into Falco DaemonSet — rollout successful with no disruption.
+
+### 8️⃣ Alertmanager Dashboard in Grafana  
+Falco → Prometheus → Alertmanager → Grafana pipeline validated.
+
+### 9️⃣ Falco Events Visualized in Grafana  
+Falco alerts exported via Falco Exporter and graphed in Grafana using `falco_events` metric.
+
+### 🔟 Alertmanager Metrics in Grafana  
+Alertmanager metrics scraped by Prometheus and visualized successfully.
+
+### 1️⃣1️⃣ Prometheus Scrape Metrics  
+Prometheus actively scrapes Falco Exporter & Alertmanager endpoints.
+
+### 1️⃣2️⃣ Falco Exporter Target UP  
+Prometheus confirms active Falco Exporter metric ingestion.
+
+### 1️⃣3️⃣ Prometheus Targets Page  
+Monitoring pipeline verified — ServiceMonitors functioning.
+
+---
 
 ---
 
