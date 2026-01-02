@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: falco-custom-rules
+  namespace: falco
+data:
+  custom-rules.yaml: |
+    - rule: Terminal shell in container
+      desc: Detect interactive shell in container
+      condition: container.id != host and proc.name in (bash, sh, zsh)
+      output: "Shell spawned in container (user=%user.name container=%container.id command=%proc.cmdline)"
+      priority: WARNING
+      tags: [container, shell]
