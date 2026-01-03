@@ -31,25 +31,26 @@ to provide **centralized Kubernetes runtime security visibility**.
 ---
 
 ## 📂 Project Structure
+
 Container-security-monitoring/
 ├── falco/
-│ ├── rules/ # Custom Falco runtime security rules
-│ ├── deployment/ # Falco Helm configs & manifests
-│ │ ├── falco-values.yaml # Falco Helm values configuration
-│ │ └── alert-forwarding.yaml # (Optional) Falco → Prometheus / Alertmanager forwarding config
+│   ├── rules/                     # Custom Falco runtime security rules
+│   ├── deployment/                # Falco Helm configs & manifests
+│   │   ├── falco-values.yaml      # Falco Helm values configuration
+│   │   └── alert-forwarding.yaml  # (Optional) Falco → Prometheus / Alertmanager forwarding config
 │
 ├── monitoring/
-│ └── servicemonitoring.yaml # Prometheus ServiceMonitor for Falco metrics
+│   └── servicemonitoring.yaml     # Prometheus ServiceMonitor for Falco metrics
 │
 ├── dashboards/
-│ └── grafana/ # Grafana dashboard JSON dashboards
+│   └── grafana/                   # Grafana dashboard JSON dashboards
 │
-├── screenshots/ # Monitoring & alert visualization screenshots
+├── screenshots/                   # Monitoring & alert visualization screenshots
 │
 ├── README.md
 ├── LICENSE
 └── .gitignore
----
+
 
 ## 🚀 Deployment Overview
 
