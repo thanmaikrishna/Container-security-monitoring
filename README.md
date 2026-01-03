@@ -31,6 +31,7 @@ to provide **centralized Kubernetes runtime security visibility**.
 ---
 
 ## 📂 Project Structure
+```
 
 Container-security-monitoring/
 ├── falco/
@@ -50,6 +51,9 @@ Container-security-monitoring/
 ├── README.md
 ├── LICENSE
 └── .gitignore
+
+```
+
 
 
 ## 🚀 Deployment Overview
